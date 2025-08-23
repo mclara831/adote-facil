@@ -1,0 +1,17 @@
+describe('Filtrar Animais', () => {
+  it('passes', () => {
+    cy.visit('http://localhost:3000/login')
+    cy.get('[name="email"]').type('adotante@adotante.com')
+    cy.get('[name="password"]').type('adotante')
+    cy.get('.sc-a06d05ba-0').click()
+    cy.get('.sc-368028a3-5 > .sc-b85c88e3-0 > [href="/area_logada/animais_disponiveis"] > .sc-b85c88e3-1 > span').click()
+    cy.get('.sc-46e1143f-2 > .sc-a06d05ba-0').click()
+    cy.get('[name="name"]').type('Frajola')
+    cy.get('.sc-a83067d2-6 > .sc-7ac7886a-0 > .sc-7ac7886a-2').click()
+    cy.get('[aria-labelledby="radix-:rg:"]').click()
+    cy.get('.sc-a83067d2-7 > .sc-7ac7886a-0 > .sc-7ac7886a-2').click()
+    cy.get('[aria-labelledby="radix-:rs:"]').click()
+    cy.get('[name="race"]').type('Siames')
+    cy.get('.sc-a83067d2-2 > .sc-a06d05ba-0').click()
+  })
+})
