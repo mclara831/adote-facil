@@ -1,0 +1,20 @@
+describe('Cadastro de Animal', () => {
+  it('passes', () => {
+        cy.visit('http://localhost:3000/login')
+    cy.get('[name="email"]').type('doador@doador.com')
+    cy.get('[name="password"]').type('doadoraf')
+    cy.get('button[type="submit"]').click()
+    cy.get('.sc-368028a3-5 > .sc-b85c88e3-0 > [href="/area_logada/disponibilizar_animal"] > .sc-b85c88e3-1 > span').click()
+    cy.get('[name="name"]').type('Chico')
+    cy.get('.sc-e38821d5-8 > .sc-7ac7886a-0 > .sc-7ac7886a-2').click()
+    cy.get('[aria-labelledby="radix-:ri:"]').click()
+    cy.get('.sc-e38821d5-9 > .sc-7ac7886a-0').click()
+    cy.get('[aria-labelledby="radix-:rs:"]').click()
+    cy.get('[aria-labelledby="radix-:rs:"]').click()
+    cy.get('[name="race"]').type("Periquito")
+    cy.get('[name="description"]').type("Animal dócil e brincalhão.")
+    cy.get('.sc-e38821d5-16').click()
+    cy.get('input[type="file"]').selectFile('cypress/fixtures/passaro.jpg', { force: true })
+    cy.get('.sc-a06d05ba-0').click()
+  })
+});
